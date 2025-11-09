@@ -23,10 +23,13 @@ export const JobCard = ({ job, onApply }: JobCardProps) => {
 
       <div className="space-y-1 mb-4">
         <p className="text-sm">
+          <span className="font-semibold">Requisitos:</span> {job.requirements}
+        </p>
+        <p className="text-sm">
           <span className="font-semibold">Salário:</span> {job.salary}
         </p>
         <p className="text-sm">
-          <span className="font-semibold">Fone:</span> {job.phone}
+          <span className="font-semibold">Contato:</span> {job.contact}
         </p>
       </div>
 

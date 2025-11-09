@@ -8,8 +8,9 @@ export interface Job {
   title: string;
   company: string;
   description: string;
+  requirements: string;
   salary: string;
-  phone: string;
+  contact: string;
 }
 
 // Tipo para Eventos (Events)

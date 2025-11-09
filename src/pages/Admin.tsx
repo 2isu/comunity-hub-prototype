@@ -56,10 +56,11 @@ const Admin = () => {
     const formData = new FormData(e.currentTarget);
     const jobData = {
       titulo: formData.get("title") as string,
-      empresa: formData.get("company") as string,
+      compania: formData.get("company") as string,
       descricao: formData.get("description") as string,
+      requer: formData.get("requirements") as string,
       salario: formData.get("salary") as string,
-      telefone: formData.get("phone") as string,
+      contato: formData.get("contact") as string,
     };
 
     try {
@@ -189,12 +190,16 @@ const Admin = () => {
                       <Textarea id="description" name="description" defaultValue={editingJob?.description} required rows={4} />
                     </div>
                     <div>
+                      <Label htmlFor="requirements">Requisitos</Label>
+                      <Textarea id="requirements" name="requirements" defaultValue={editingJob?.requirements} required rows={3} />
+                    </div>
+                    <div>
                       <Label htmlFor="salary">Salário</Label>
                       <Input id="salary" name="salary" defaultValue={editingJob?.salary} required />
                     </div>
                     <div>
-                      <Label htmlFor="phone">Telefone</Label>
-                      <Input id="phone" name="phone" defaultValue={editingJob?.phone} required />
+                      <Label htmlFor="contact">Contato</Label>
+                      <Input id="contact" name="contact" defaultValue={editingJob?.contact} required />
                     </div>
                     <Button type="submit" className="w-full">Salvar</Button>
                   </form>
@@ -213,8 +218,9 @@ const Admin = () => {
                       <p className="text-sm text-primary">{job.company}</p>
                       <p className="text-sm text-muted-foreground mt-2">{job.description}</p>
                       <div className="mt-2 text-sm">
+                        <p><span className="font-semibold">Requisitos:</span> {job.requirements}</p>
                         <p><span className="font-semibold">Salário:</span> {job.salary}</p>
-                        <p><span className="font-semibold">Fone:</span> {job.phone}</p>
+                        <p><span className="font-semibold">Contato:</span> {job.contact}</p>
                       </div>
                     </div>
                     <div className="flex gap-2 ml-4">
