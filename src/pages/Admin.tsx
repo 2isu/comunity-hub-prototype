@@ -54,20 +54,20 @@ const Admin = () => {
   const handleSaveJob = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const jobData: Job = {
-      title: formData.get("title") as string,
-      company: formData.get("company") as string,
-      description: formData.get("description") as string,
-      salary: formData.get("salary") as string,
-      phone: formData.get("phone") as string,
+    const jobData = {
+      titulo: formData.get("title") as string,
+      empresa: formData.get("company") as string,
+      descricao: formData.get("description") as string,
+      salario: formData.get("salary") as string,
+      telefone: formData.get("phone") as string,
     };
 
     try {
       if (editingJob?.id) {
-        await jobsApi.update(editingJob.id, jobData);
+        await jobsApi.update(editingJob.id, jobData as any);
         toast({ title: "Emprego atualizado com sucesso!" });
       } else {
-        await jobsApi.create(jobData);
+        await jobsApi.create(jobData as any);
         toast({ title: "Emprego criado com sucesso!" });
       }
       setIsJobDialogOpen(false);
@@ -100,20 +100,20 @@ const Admin = () => {
   const handleSaveEvent = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const eventData: Event = {
-      title: formData.get("title") as string,
-      description: formData.get("description") as string,
-      date: formData.get("date") as string,
-      location: formData.get("location") as string,
-      organizer: formData.get("organizer") as string,
+    const eventData = {
+      titulo: formData.get("title") as string,
+      descricao: formData.get("description") as string,
+      data: formData.get("date") as string,
+      localizacao: formData.get("location") as string,
+      organizador: formData.get("organizer") as string,
     };
 
     try {
       if (editingEvent?.id) {
-        await eventsApi.update(editingEvent.id, eventData);
+        await eventsApi.update(editingEvent.id, eventData as any);
         toast({ title: "Evento atualizado com sucesso!" });
       } else {
-        await eventsApi.create(eventData);
+        await eventsApi.create(eventData as any);
         toast({ title: "Evento criado com sucesso!" });
       }
       setIsEventDialogOpen(false);
