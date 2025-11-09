@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -175,6 +175,7 @@ const Admin = () => {
                     <DialogTitle>
                       {editingJob ? "Editar Emprego" : "Novo Emprego"}
                     </DialogTitle>
+                    <DialogDescription>Preencha os dados do emprego</DialogDescription>
                   </DialogHeader>
                   <form onSubmit={handleSaveJob} className="space-y-4">
                     <div>
@@ -264,6 +265,7 @@ const Admin = () => {
                     <DialogTitle>
                       {editingEvent ? "Editar Evento" : "Novo Evento"}
                     </DialogTitle>
+                    <DialogDescription>Preencha os dados do evento</DialogDescription>
                   </DialogHeader>
                   <form onSubmit={handleSaveEvent} className="space-y-4">
                     <div>
